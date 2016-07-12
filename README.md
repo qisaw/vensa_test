@@ -15,6 +15,11 @@ To run the UI
 ~~~ shell
 npm start
 ~~~
+once you see output like
+~~~ shell
+webpack: bundle is now VALID.
+~~~
+you should navigate to [localhost:8000](http://localhost:8080) to view the application
 
 ## Test
 To run the tests a single time
