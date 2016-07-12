@@ -27,7 +27,7 @@ npm run test:watch
 ~~~
 
 ## Lint
-To run through the code-base with a style linter (EsLint)[http://eslint.org/]
+To run through the code-base with a style linter [ESLint](http://eslint.org/)
 ~~~ shell
 npm run lint
 ~~~
