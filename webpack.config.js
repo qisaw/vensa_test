@@ -33,6 +33,19 @@ module.exports = {
           'react-hot',
           'babel']
       },
+      {
+        test: /\.json$/,
+        loaders: [
+          'json'
+        ],
+      },
+      {
+        test: /\.svg$/,
+        loader: 'babel!svg-react' + 
+          //remove the xmlns warning https://github.com/jhamlet/svg-react-loader/issues/25
+          //will remove when the issue above is closed
+          '!string-replace?search=%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22&replace=',
+      },
     ],
   },
   postcss: (webpack) => {
@@ -63,7 +76,26 @@ module.exports = {
     })
   ],
   resolve: {
-    extensions: ['', '.js', '.jsx']
+    extensions: ['', '.js', '.jsx'],
+    alias: {
+      'react-dom': __dirname + '/node_modules/react-dom'
+    }
+  },
+  devServer: {
+    historyApiFallback: true,
+    proxy: {
+      '/message*': {
+        target: 'http://vensawebtest.azurewebsites.net',
+        host: 'vensawebtest.azurewebsites.net'
+      }
+    } 
+  },
+  //for testing purposes
+  externals: {
+    'cheerio': 'window',
+    'react/addons': true,
+    'react/lib/ExecutionEnvironment': true,
+    'react/lib/ReactContext': true
   },
 }
 

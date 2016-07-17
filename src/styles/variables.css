@@ -1,0 +1,24 @@
+:root {
+  --color-astronaut-blue: #0B3862;
+  --color-yale-blue: #105492;
+  --color-bermuda-grey: #6B8FAF;
+  --color-white: #FFF;
+  --color-baby-blue-eyes: #9FC5F6;
+  --color-alto: #D9D9D9;
+  --color-dollar-bill: #85BA67;
+  --color-mahogany: #D64645;
+  --color-empress: #7F6E78;
+
+  --header-bar-color: var(--color-yale-blue);
+  --active-button-color: var(--color-bermuda-grey);
+  --color-hover: var(--color-alto);
+  --color-success: var(--color-dollar-bill);
+  --color-failure: var(--color-mahogany);
+  --color-neutral: var(--color-empress);
+
+  --header-bar-height: 45px;
+  --side-bar-width: 65px;
+  --label-font-size: 9px;
+
+  --default-transition-duration: .3s;
+}

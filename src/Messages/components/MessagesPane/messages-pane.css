@@ -1,0 +1,10 @@
+.messages-pane {
+  width: 65%;
+  display: flex;
+  flex-direction: column;
+}
+
+.scroll {
+  display: flex;
+  flex-direction: column;
+}

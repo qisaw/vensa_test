@@ -1,0 +1,19 @@
+@import "variables.css";
+.header-bar {
+  background: var(--header-bar-color);
+  color: var(--color-white);
+  height: var(--header-bar-height);
+  padding: 5px 10px;
+  display: flex;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  align-items: center;
+}
+
+.logo {
+  fill: var(--color-white);
+  height: 25px;
+  width: 66px;
+}

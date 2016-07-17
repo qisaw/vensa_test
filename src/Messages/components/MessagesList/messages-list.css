@@ -1,0 +1,6 @@
+.messages-list {
+  overflow: auto;
+}
+.item {
+  width: 100%;
+}

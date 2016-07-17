@@ -1,0 +1,20 @@
+@import "variables.css";
+.icon {
+  fill: var(--color-white);
+  height: 32px;
+  width: 32px;
+}
+.side-bar {
+  position: fixed;
+  top: var(--header-bar-height);
+  left: 0;
+  background: var(--header-bar-color);
+  width: var(--side-bar-width);
+  height: calc(100vh - var(--header-bar-height));
+  color: var(--color-white);
+  padding: 20px 0 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow-y:auto;
+}

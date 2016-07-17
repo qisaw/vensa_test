@@ -1,0 +1,10 @@
+@import "variables.css";
+
+.filter-pane {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 8px 5px;
+  min-height: 35px;
+  border-bottom: 3px solid var(--color-baby-blue-eyes);
+}

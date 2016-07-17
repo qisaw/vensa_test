@@ -1,25 +1,35 @@
 import { List, OrderedMap } from 'immutable';
-import { actionTypes as t } from './reducer.js';
+import { actionTypes as t } from '../actions/messages';
 // define initial state shape
 const initObj = {
   isFetching: false,
-  messages: new List(),
+  messages: [],
   error: null,
 };
-const messagesMap = new OrderedMap(initObj);
-const initState = messagesMap;
 
 // update is not a side effecting method. It creates a new instance of the object
-function messages(state = initState, action) {
+function messages(state = initObj, action) {
   switch (action.type) {
     case t.getMessages_get: {
-      return state.update('isFetching', true);
+      return {
+        ...state,
+        isFetching: true,
+      }
     }
     case t.getMessages_success: {
-      return state.update('messages', action.payload).update('error', null);
+      return {
+        ...state,
+        isFetching: false,
+        messages: action.payload,
+        error: null,
+      }
     }
     case t.getMessages_failure: {
-      return state.update('error', action.payload);
+      return {
+        ...state,
+        isFetching: false,
+        error: action.payload,
+      }
     }
     default: {
       return state;
@@ -27,4 +37,6 @@ function messages(state = initState, action) {
   }
 }
 
+
 export default messages;
+

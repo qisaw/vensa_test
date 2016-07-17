@@ -1,0 +1,15 @@
+@import "variables.css";
+@import "messages.css";
+
+.good {
+  color: var(--color-success);
+}
+
+.bad {
+  color: var(--color-failure);
+}
+
+.neutral {
+  color: var(--color-neutral);
+}
+

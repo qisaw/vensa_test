@@ -1,0 +1,32 @@
+@import "variables.css";
+.nav-button {
+  text-decoration: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  outline: none;
+  background: var(--header-bar-color);
+  color: var(--color-white);
+  height: var(--side-bar-width);
+  min-height: var(--side-bar-width);
+  padding: 10px 0;
+  transition: var(--default-transition-duration) all;
+  @nest &:hover{
+    background: var(--active-button-color);
+  }
+}
+.active {
+  background: var(--active-button-color);
+}
+.label {
+  font-size: var(--label-font-size);
+}
+.icon {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 0 0 2px 0;
+}

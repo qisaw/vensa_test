@@ -1,0 +1,57 @@
+@import "variables.css";
+
+:root {
+  --min-width: 640px;
+}
+.message {
+  min-width: var(--min-width);
+  display: flex;
+  padding: 5px 0px;
+  align-items: center;
+  border-bottom: 1px solid var(--color-baby-blue-eyes);
+  cursor: pointer;
+  @nest &:hover {
+    background: var(--color-hover);
+  }
+}
+
+.pad {
+  padding: 0 10px 0 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.input {
+  padding: 0 10px;
+}
+
+.nhi {
+  composes: pad;
+  min-width: calc(var(--min-width) * .10);
+}
+
+.name {
+  composes: pad;
+  min-width: calc(var(--min-width) * .20);
+}
+
+.body {
+  composes: pad;
+  flex-grow: 1;
+}
+
+.time {
+  composes: pad;
+  min-width: calc(var(--min-width) * .12);
+}
+
+.add-on {
+  composes: pad;
+  min-width: calc(var(--min-width) * .12);
+}
+
+.status {
+  composes: pad;
+  min-width: calc(var(--min-width) * .14);
+}

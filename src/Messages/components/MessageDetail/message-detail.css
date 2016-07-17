@@ -1,0 +1,26 @@
+@import "variables.css";
+.message-detail {
+  flex-grow: 1;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+}
+
+.item {
+  display: flex;
+  align-items: center;
+  padding: 8px 5px;
+  border-bottom: 1px solid var(--color-baby-blue-eyes);
+}
+
+.label {
+  min-width: 80px;
+  max-width: 80px;
+  color: var(--color-empress);
+}
+
+.content {
+  flex-grow: 1;
+}
