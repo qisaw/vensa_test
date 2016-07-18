@@ -15,7 +15,6 @@ function* saga(action) {
     const messages = yield call(api, action.payload);
     yield put(actions.messageDetails_success(messages));
   } catch (error) {
-    console.log(error);
     yield put(actions.messageDetails_failure(error));
   }
 }

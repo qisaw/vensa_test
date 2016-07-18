@@ -10,7 +10,7 @@ function api() {
     .then(response => response.body);
 }
 
-function* saga(action) {
+function* saga() {
   try {
     const messages = yield call(api);
     yield put(actions.getMessages_success(messages));

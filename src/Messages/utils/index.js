@@ -14,31 +14,31 @@ const getMessageStatus = (status) => {
 };
 
 const messageDetailPropType = PropTypes.shape({
-	                                                                                                                                                                                                                                                                      DoctorName: PropTypes.string.isRequired,
-	                                                                                                                                                                                                                                                                      PatientId: PropTypes.string.isRequired,
-	                                                                                                                                                                                                                                                                      Address: PropTypes.string.isRequired,
-	                                                                                                                                                                                                                                                                      Id: PropTypes.string.isRequired,
-	                                                                                                                                                                                                                                                                      NHI: PropTypes.string.isRequired,
-	                                                                                                                                                                                                                                                                      PatientName: PropTypes.string.isRequired,
-	                                                                                                                                                                                                                                                                      MobileNumber: PropTypes.string.isRequired,
-	                                                                                                                                                                                                                                                                      HomeNumber: PropTypes.string.isRequired,
-	                                                                                                                                                                                                                                                                      Body: PropTypes.string.isRequired,
-	                                                                                                                                                                                                                                                                      SentDateTime: PropTypes.string.isRequired,
-	                                                                                                                                                                                                                                                                      ReceivedDateTime: PropTypes.string.isRequired,
-	                                                                                                                                                                                                                                                                      Status: PropTypes.number.isRequired,
-	                                                                                                                                                                                                                                                                      AddOn: PropTypes.string.isRequired,
+  DoctorName: PropTypes.string.isRequired,
+  PatientId: PropTypes.string.isRequired,
+  Address: PropTypes.string.isRequired,
+  Id: PropTypes.string.isRequired,
+  NHI: PropTypes.string.isRequired,
+  PatientName: PropTypes.string.isRequired,
+  MobileNumber: PropTypes.string.isRequired,
+  HomeNumber: PropTypes.string.isRequired,
+  Body: PropTypes.string.isRequired,
+  SentDateTime: PropTypes.string.isRequired,
+  ReceivedDateTime: PropTypes.string.isRequired,
+  Status: PropTypes.number.isRequired,
+  AddOn: PropTypes.string.isRequired,
 });
 
 const messagePropType = PropTypes.shape({
-	                                                                                                                                                                                                                                                                      Id: PropTypes.string.isRequired,
-	                                                                                                                                                                                                                                                                      NHI: PropTypes.string.isRequired,
-	                                                                                                                                                                                                                                                                      PatientName: PropTypes.string.isRequired,
-	                                                                                                                                                                                                                                                                      MobileNumber: PropTypes.string.isRequired,
-	                                                                                                                                                                                                                                                                      Body: PropTypes.string.isRequired,
-	                                                                                                                                                                                                                                                                      SentDateTime: PropTypes.string.isRequired,
-	                                                                                                                                                                                                                                                                      ReceivedDateTime: PropTypes.string.isRequired,
-	                                                                                                                                                                                                                                                                      Status: PropTypes.number.isRequired,
-	                                                                                                                                                                                                                                                                      AddOn: PropTypes.string.isRequired,
+  Id: PropTypes.string.isRequired,
+  NHI: PropTypes.string.isRequired,
+  PatientName: PropTypes.string.isRequired,
+  MobileNumber: PropTypes.string.isRequired,
+  Body: PropTypes.string.isRequired,
+  SentDateTime: PropTypes.string.isRequired,
+  ReceivedDateTime: PropTypes.string.isRequired,
+  Status: PropTypes.number.isRequired,
+  AddOn: PropTypes.string.isRequired,
 });
 
 const filterPropType = PropTypes.shape({
@@ -52,3 +52,4 @@ export {
   messageDetailPropType,
   filterPropType,
 };
+

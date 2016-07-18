@@ -1,5 +1,4 @@
-import React, { Component, PropTypes } from 'react';
-import ReactDOM from 'react-dom';
+import React, { PropTypes } from 'react';
 
 import styles from './messages-pane.css';
 
@@ -15,12 +14,12 @@ const MessagesPane = ({ filters, removeFn, toggleFilterFn, showFn, messages, lis
         filters={filters}
         removeFn={removeFn}
       />
-    <MessagesList
-      messages={messages}
-      clickFn={listClickFn}
-      toggleFilterFn={toggleFilterFn}
-      filters={filters}
-    />
+      <MessagesList
+        messages={messages}
+        clickFn={listClickFn}
+        toggleFilterFn={toggleFilterFn}
+        filters={filters}
+      />
     </ScrollPane>
   </div>
 );

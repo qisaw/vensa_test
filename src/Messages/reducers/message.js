@@ -1,4 +1,3 @@
-import { List, OrderedMap } from 'immutable';
 import { actionTypes as t } from '../actions/messages';
 import { findIndex, filter } from 'lodash';
 // define initial state shape
@@ -37,10 +36,13 @@ function messages(state = initObj, action) {
       const filterIndex = findIndex(state.filters, ({ colName }) => colName === action.payload);
       let newFilters;
       if (filterIndex !== -1) {
-        const filter = { ...state.filters[filterIndex], ascending: !state.filters[filterIndex].ascending };
+        const filterObj = {
+          ...state.filters[filterIndex],
+          ascending: !state.filters[filterIndex].ascending,
+        };
         newFilters = [
           ...state.filters.slice(0, filterIndex),
-          filter,
+          filterObj,
           ...state.filters.slice(filterIndex + 1),
         ];
       } else {
