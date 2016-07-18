@@ -1,12 +1,11 @@
 import React, { PropTypes } from 'react';
-import ReactDOM from 'react-dom';
 
 import styles from './message-detail.css';
 
 import ScrollPane from '../../../components/ScrollPane';
-import {getMessageStatus, messageDetailPropType} from '../../utils';
+import { getMessageStatus, messageDetailPropType } from '../../utils';
 
-const MessageDetail = ({messageDetail, closeFn, showFn}) => {
+const MessageDetail = ({ messageDetail, closeFn, showFn }) => {
   const internals = () => (
     <div className={styles.form}>
       <div className={styles.item}>
@@ -66,7 +65,7 @@ const MessageDetail = ({messageDetail, closeFn, showFn}) => {
         closeFn={closeFn}
 
       >
-        {messageDetail? internals() : ''}
+        {messageDetail ? internals() : ''}
       </ScrollPane>
 
 
@@ -75,11 +74,12 @@ const MessageDetail = ({messageDetail, closeFn, showFn}) => {
 };
 
 MessageDetail.propTypes = {
-  messageDetail: messageDetailPropType.isRequired,
+  messageDetail: messageDetailPropType,
   closeFn: PropTypes.func.isRequired,
+  showFn: PropTypes.func.isRequired,
 };
 
 export default MessageDetail;
 export {
   styles,
-}
+};

@@ -7,9 +7,9 @@ import HeaderBar, { styles } from './index';
 
 chai.use(dirtyChai);
 
-describe('HeaderBar', ()=> {
+describe('HeaderBar', () => {
   it('should have the correct classname', () => {
-    const element = shallow(<HeaderBar/>);
+    const element = shallow(<HeaderBar />);
     expect(element.hasClass(styles.headerBar)).to.be.true();
-  })
-})
+  });
+});

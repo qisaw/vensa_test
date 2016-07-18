@@ -6,13 +6,13 @@ const initMessage = {
   error: null,
 };
 
-function messageDetail(state=initMessage, action) {
+function messageDetail(state = initMessage, action) {
   switch (action.type) {
     case t.messageDetails_get: {
       return {
         ...state,
         isFetching: true,
-      }
+      };
     }
     case t.messageDetails_success: {
       return {
@@ -20,14 +20,14 @@ function messageDetail(state=initMessage, action) {
         isFetching: false,
         message: action.payload,
         error: null,
-      }
+      };
     }
     case t.messageDetails_failure: {
       return {
         ...state,
         isFetching: false,
         error: action.payload,
-      }
+      };
     }
     case t.messageDetails_clear: {
       return {
@@ -35,12 +35,15 @@ function messageDetail(state=initMessage, action) {
         isFetching: false,
         error: null,
         message: null,
-      }
+      };
+    }
+    case '@@router/LOCATION_CHANGE': {
+      return initMessage;
     }
     default: {
       return state;
     }
   }
-};
+}
 
 export default messageDetail;

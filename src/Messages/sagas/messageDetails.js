@@ -7,7 +7,7 @@ function api(id) {
   return superagent
     .get(`/message/${id}`)
     .set('Accept', 'application/json')
-    .then(response => response.body)
+    .then(response => response.body);
 }
 
 function* saga(action) {

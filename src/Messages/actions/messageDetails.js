@@ -19,13 +19,13 @@ const actions = {
     payload: err,
     error: true,
   }),
-  messageDetails_clear: () =>({
+  messageDetails_clear: () => ({
     type: actionTypes.messageDetails_clear,
-  })
+  }),
 };
 
 export {
   actionTypes,
-  actions
-}
+  actions,
+};
 

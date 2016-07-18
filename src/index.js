@@ -3,7 +3,6 @@ import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
 import { Router, browserHistory, Route, IndexRoute } from 'react-router';
 import { syncHistoryWithStore } from 'react-router-redux';
-import ScrollPane from './components/ScrollPane';
 import Messages from './Messages/components/Messages';
 
 import configureStore from './store/configureStore';

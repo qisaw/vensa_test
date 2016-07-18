@@ -1,5 +1,4 @@
-import React, { Component, PropTypes } from 'react';
-import ReactDOM from 'react-dom';
+import React, { PropTypes } from 'react';
 import { Link } from 'react-router';
 import classnames from 'classnames';
 
@@ -11,7 +10,7 @@ const NavButton = ({ route, currentRoute, title, icon, className, activeClassNam
   const classNames = classnames(className, styles.navButton, {
     [styles.active]: isActive,
     [activeClassName]: activeClassName && isActive,
-  })
+  });
   return (
     <Link to={route} className={classNames}>
       <div className={styles.icon}>
@@ -22,7 +21,7 @@ const NavButton = ({ route, currentRoute, title, icon, className, activeClassNam
       </div>
     </Link>
   );
-}
+};
 NavButton.propTypes = {
   route: PropTypes.string.isRequired,
   currentRoute: PropTypes.string.isRequired,

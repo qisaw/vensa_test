@@ -8,20 +8,22 @@ import FilterPane from '../FilterPane';
 import MessagesList from '../MessagesList';
 import { messagePropType, filterPropType } from '../../utils';
 
-const MessagesPane = ({filters, removeFn, showFn, messages, listClickFn}) => (
+const MessagesPane = ({ filters, removeFn, toggleFilterFn, showFn, messages, listClickFn }) => (
   <div className={styles.messagesPane}>
-  <ScrollPane show={showFn} className={styles.scroll}>
-    <FilterPane
+    <ScrollPane show={showFn} className={styles.scroll}>
+      <FilterPane
+        filters={filters}
+        removeFn={removeFn}
+      />
+    <MessagesList
+      messages={messages}
+      clickFn={listClickFn}
+      toggleFilterFn={toggleFilterFn}
       filters={filters}
-      removeFn={removeFn}
     />
-  <MessagesList
-    messages={messages}
-    clickFn={listClickFn}
-  />
-  </ScrollPane>
+    </ScrollPane>
   </div>
-)
+);
 
 MessagesPane.propTypes = {
   messages: PropTypes.arrayOf(messagePropType).isRequired,
@@ -29,6 +31,7 @@ MessagesPane.propTypes = {
   filters: PropTypes.arrayOf(filterPropType).isRequired,
   showFn: PropTypes.func.isRequired,
   listClickFn: PropTypes.func.isRequired,
+  toggleFilterFn: PropTypes.func.isRequired,
 };
 
 export default MessagesPane;

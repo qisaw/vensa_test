@@ -1,19 +1,31 @@
 import React, { PropTypes } from 'react';
-import ReactDOM from 'react-dom';
 import classnames from 'classnames';
+import { find } from 'lodash';
+import { filterPropType } from '../../utils';
 
 import styles from './message-heading.css';
 import ArrowSvg from '../../../svg/arrow.svg';
 
-const MessageHeading = () => {
+const MessageHeading = ({ toggle, filters }) => {
+  const applyAscending = (colName) => {
+    const item = find(filters, (f) => f.colName === colName);
+    return item ? item.ascending : false;
+  };
+  const getClass = (colName) => ({
+    [styles.ascending]: applyAscending(colName),
+  });
   return (
     <div className={classnames(styles.message, styles.heading)}>
       <div className={styles.input}>
-        <input type="checkbox"/>
+        <input type="checkbox" />
       </div>
       <div className={styles.nhi}>
         <div className={styles.flexContainer}>
-          NHI <ArrowSvg className={styles.icon}/>
+          NHI
+          <ArrowSvg
+            onClick={() => toggle('NHI')}
+            className={classnames(styles.icon, getClass('NHI'))}
+          />
         </div>
       </div>
       <div className={styles.name}>
@@ -23,7 +35,11 @@ const MessageHeading = () => {
       </div>
       <div className={styles.body}>
         <div className={styles.flexContainer}>
-          Message <ArrowSvg className={styles.icon}/>
+          Message
+          <ArrowSvg
+            onClick={() => toggle('Body')}
+            className={classnames(styles.icon, getClass('Body'))}
+          />
         </div>
       </div>
       <div className={styles.time}>
@@ -33,19 +49,32 @@ const MessageHeading = () => {
       </div>
       <div className={styles.addOn}>
         <div className={styles.flexContainer}>
-          Add-on <ArrowSvg className={styles.icon}/>
+          Add-On
+          <ArrowSvg
+            onClick={() => toggle('AddOn')}
+            className={classnames(styles.icon, getClass('AddOn'))}
+          />
         </div>
       </div>
       <div className={styles.status}>
         <div className={styles.flexContainer}>
-          Status <ArrowSvg className={styles.icon}/>
+          Status
+          <ArrowSvg
+            onClick={() => toggle('Status')}
+            className={classnames(styles.icon, getClass('Status'))}
+          />
         </div>
       </div>
     </div>
   );
-}
+};
+
+MessageHeading.propTypes = {
+  toggle: PropTypes.func.isRequired,
+  filters: PropTypes.arrayOf(filterPropType.isRequired),
+};
 
 export default MessageHeading;
 export {
   styles,
-}
+};

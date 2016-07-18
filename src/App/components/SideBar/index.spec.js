@@ -7,9 +7,9 @@ import SideBar, { styles } from './index';
 
 chai.use(dirtyChai);
 
-describe('SideBar', ()=> {
+describe('SideBar', () => {
   it('should have the correct classname', () => {
-    const element = shallow(<SideBar/>);
+    const element = shallow(<SideBar />);
     expect(element.hasClass(styles.sideBar)).to.be.true();
-  })
-})
+  });
+});
